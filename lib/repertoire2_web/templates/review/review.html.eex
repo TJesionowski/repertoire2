@@ -1,2 +1,17 @@
 <h1>Hello Phenoix!</h1>
 <p>Here I will put the card.<p>
+<input type="text" id="user_answer" name="user_answer"><br><br>
+<input type="button" onclick="check()" value="Submit">
+
+<script>
+function check() {
+var aTxt = document.getElementById("user_answer").value;
+console.log(aTxt);
+if (aTxt == "0") {
+  alert("Good job!");
+}
+ else {
+  alert("Your brain is smooth as glass, and I hate you.");
+}
+}
+</script>
