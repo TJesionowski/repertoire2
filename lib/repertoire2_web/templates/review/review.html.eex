@@ -1,9 +1,51 @@
-<h1>Hello Phenoix!</h1>
-<p>number:</p>
-<%= 34 / 25 %>
+<!DOCTYPE html>
+<html>
+<body>
 
-<p>I have a message for you:</p>
-<%= duck %>
+<h1>Review</h1>
 
-<p>And you have a message for me:</p>
-<%= @message %>
+<p id="eq">eq</p>
+<input type="text" id="user_answer" name="user_answer"><br><br>
+<input type="hidden" id="answer" name="answer" value="">
+<input type="button" onclick="check()" value="Submit">
+
+<script>
+function check() {
+var aTxt = document.getElementById("user_answer").value;
+console.log(aTxt);
+if (aTxt == document.getElementById("answer").value) {
+  alert("Good job!");
+  location.reload();
+}
+ else {
+  alert("Wrong");
+}
+}
+</script>
+<!-- let REEE = '{"answer":"a*a + b*b","variables":{"a":"Math.ceil(Math.random()*10)","b":"Math.ceil(Math.random()*10)"},"recipe":"{{a}}^2 + {{b}}^2 = {{answer}}"}'; -->
+<script>
+
+let REEE = fetch('/card').then(
+    (card) => {
+    console.log(card.json());
+    // dom stuff
+    const cardJ = JSON.parse(REEE.json);
+    const varVals = [];
+    const varRecipes = cardJ.variables;
+    const answerStr = cardJ.answer;
+    let recipeStr = cardJ.recipe;
+    for (var key in varRecipes) {
+        eval(key + "=" + varRecipes[key]);
+        recipeStr = recipeStr.replace(key,eval(key));
+    }
+    recipeStr = recipeStr.replace("answer","X");
+    document.getElementById("eq").innerHTML = "$" + recipeStr + "$";
+    document.getElementById("answer").value = eval(answerStr);
+    }
+    )
+
+</script>
+<script src="check-for-tex.js" defer></script>
+</body>
+</html>
+
