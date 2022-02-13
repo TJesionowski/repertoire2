@@ -5,13 +5,12 @@
 </head>
 <body>
 
+<h3>Card Creation</h3>
 
-<h1><em>Repetoir</em></h1>
-<p> </p>
 
 <form method="post" action="(INSERT DIRECTORY HERE)">
     
-        <label for="math">Input the card</label>
+        <label for="math">Input Any Card Below</label>
         <textarea rows="25" cols="25"></textarea>
         <input type="submit" name="Submit" value="Submit Card">
     
