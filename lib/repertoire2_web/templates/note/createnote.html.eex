@@ -1,5 +1,19 @@
-<h5>Number:</h5>
-<%= n = 5 %>
+<!DOCTYPE html>
+<html> 
+<head>
+    
+</head>
+<body>
 
-<p>Number squared:</p>
-<%= n * n %>
+
+<h1><em>Repetoir</em></h1>
+<p> </p>
+
+<form method="post" action="(INSERT DIRECTORY HERE)">
+    
+        <label for="math">Input the card</label>
+        <textarea rows="25" cols="25"></textarea>
+        <input type="submit" name="Submit" value="Submit Card">
+    
+</form>
+
