@@ -34,7 +34,7 @@ for (var key in varRecipes) {
     recipeStr = recipeStr.replace(key,eval(key));
 }
 recipeStr = recipeStr.replace("answer","X");
-document.getElementById("eq").innerHTML = "$" + recipeStr + "$";
+document.getElementById("eq").innerText = "$" + recipeStr + "$";
 document.getElementById("answer").value = eval(answerStr);
 </script>
 <script src="check-for-tex.js" defer></script>

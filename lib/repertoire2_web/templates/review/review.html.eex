@@ -22,30 +22,23 @@ if (aTxt == document.getElementById("answer").value) {
 }
 }
 </script>
-<!-- let REEE = '{"answer":"a*a + b*b","variables":{"a":"Math.ceil(Math.random()*10)","b":"Math.ceil(Math.random()*10)"},"recipe":"{{a}}^2 + {{b}}^2 = {{answer}}"}'; -->
 <script>
-
-let REEE = fetch('/card').then(
-    (card) => {
-    console.log(card.json());
-    // dom stuff
-    const cardJ = JSON.parse(REEE.json);
-    const varVals = [];
-    const varRecipes = cardJ.variables;
-    const answerStr = cardJ.answer;
-    let recipeStr = cardJ.recipe;
-    for (var key in varRecipes) {
-        eval(key + "=" + varRecipes[key]);
-        recipeStr = recipeStr.replace(key,eval(key));
-    }
-    recipeStr = recipeStr.replace("answer","X");
-    document.getElementById("eq").innerHTML = "$" + recipeStr + "$";
-    document.getElementById("answer").value = eval(answerStr);
-    }
-    )
-
+let REEE = '{"answer":"a*a + b*b","variables":{"a":"Math.ceil(Math.random()*10)","b":"Math.ceil(Math.random()*10)"},"recipe":"{{a}}^2 + {{b}}^2 = {{answer}}"}';
+const card = JSON.parse(REEE);
+const varVals = [];
+const varRecipes = card.variables;
+const answerStr = card.answer;
+let recipeStr = card.recipe;
+for (var key in varRecipes) {
+    eval(key + "=" + varRecipes[key]);
+    recipeStr = recipeStr.replace(key,eval(key));
+}
+recipeStr = recipeStr.replace("answer","X");
+document.getElementById("eq").innerHTML = "$" + recipeStr + "$";
+document.getElementById("answer").value = eval(answerStr);
 </script>
-<script src="check-for-tex.js" defer></script>
+<script type="text/javascript" id="MathJax-script" async
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
 </html>
 
