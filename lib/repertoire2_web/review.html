@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Review</h1>
+
+<p id="eq">eq</p>
+<input type="text" id="user_answer" name="user_answer"><br><br>
+<input type="hidden" id="answer" name="answer" value="">
+<input type="button" onclick="check()" value="Submit">
+
+<script>
+function check() {
+var aTxt = document.getElementById("user_answer").value;
+console.log(aTxt);
+if (aTxt == document.getElementById("answer").value) {
+  alert("Good job!");
+  location.reload();
+}
+ else {
+  alert("Your brain is smooth as glass, and I hate you.");
+}
+}
+</script>
+<script>
+let REEE = '{"answer":"a*a + b*b","variables":{"a":"Math.ceil(Math.random()*10)","b":"Math.ceil(Math.random()*10)"},"recipe":"{{a}}^2 + {{b}}^2 = {{answer}}"}';
+const card = JSON.parse(REEE);
+const varVals = [];
+const varRecipes = card.variables;
+const answerStr = card.answer;
+let recipeStr = card.recipe;
+for (var key in varRecipes) {
+    eval(key + "=" + varRecipes[key]);
+    recipeStr = recipeStr.replace(key,eval(key));
+}
+recipeStr = recipeStr.replace("answer","X");
+document.getElementById("eq").innerHTML = "$" + recipeStr + "$";
+document.getElementById("answer").value = eval(answerStr);
+</script>
+<script src="check-for-tex.js" defer></script>
+</body>
+</html>
+
