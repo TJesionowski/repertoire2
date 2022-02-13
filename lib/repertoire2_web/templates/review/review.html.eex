@@ -1,2 +1,9 @@
 <h1>Hello Phenoix!</h1>
-<p>Here I will put the card.<p>
+<p>number:</p>
+<%= 34 / 25 %>
+
+<p>I have a message for you:</p>
+<%= duck %>
+
+<p>And you have a message for me:</p>
+<%= @message %>
