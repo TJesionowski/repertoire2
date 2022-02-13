@@ -1,0 +1,5 @@
+<h5>Number:</h5>
+<%= n = 5 %>
+
+<p>Number squared:</p>
+<%= n * n %>

@@ -19,6 +19,7 @@ defmodule Repertoire2Web.Router do
 
     get "/", PageController, :index
     get "/review", ReviewController, :show
+    get "/createnote", NoteController, :create
   end
 
   # Other scopes may use custom stacks.
