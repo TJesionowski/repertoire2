@@ -32,5 +32,9 @@ repertoire2-*.tar
 npm-debug.log
 /assets/node_modules/
 
-# Shh
-*.org*
+# These are to deal with my (tim's) note taking habit.
+notes.org
+notes.tex
+notes.pdf
+*#*
+_minted*
