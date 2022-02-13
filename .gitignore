@@ -32,3 +32,5 @@ repertoire2-*.tar
 npm-debug.log
 /assets/node_modules/
 
+# Shh
+*.org*

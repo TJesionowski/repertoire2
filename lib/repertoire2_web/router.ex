@@ -18,6 +18,7 @@ defmodule Repertoire2Web.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/review", ReviewController, :show
   end
 
   # Other scopes may use custom stacks.
