@@ -1,6 +1,8 @@
 # Repertoire2
 
-To start your Phoenix server:
+## Getting Started
+
+To run locally:
 
   * Install dependencies with `mix deps.get`
   * Create and migrate your database with `mix ecto.setup`
@@ -8,12 +10,25 @@ To start your Phoenix server:
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## Learn more
-
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+## Roadmap
+ - [ ] Alpha Release (0.0.1)
+   - [ ] Math Exercise workflow
+     - [ ] Note creation
+     - [ ] Card (re)generation
+     - [ ] Question instantiation
+     - [ ] Card (re)scheduling
+     - [ ] Show Recipe on failure
+     - [ ] Live Review page?
+ - [ ] Beta Release (0.1.0)
+   - [ ] User Account System
+     - [ ] Password Security checking on signup
+       - [ ] AmIPwned API call
+       - [ ] zxcvbn strength test
+         - [ ] special character handling?
+     - [ ] strong Argon2 hashing
+     - [ ] Single-User mode
+ - [ ] Full Release (1.0.0)
+   - [ ] Vocabulary Notes
+   - [ ] Plugin System??
+   - [ ] Note/Card relationships
+   - [ ] "Memorize" option for notes
